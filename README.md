@@ -1,3 +1,3 @@
-# Kata04---CodumAcademy
+# CodumAcademy
 
-## Link del ejercicio: http://codekata.com/kata/kata04-data-munging/
+## Kata 04 - Link del ejercicio: http://codekata.com/kata/kata04-data-munging/
