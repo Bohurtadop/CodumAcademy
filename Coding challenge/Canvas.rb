@@ -25,7 +25,7 @@ class Canvas
     y1 = y1.to_i
     y2 = y2.to_i
     if x1 != x2 && y1 != y2
-      puts "Wrong command, only horizontal and vertical lines."
+      puts "Expected horizontal or vertical line."
     elsif x1 == x2 && y1 == y2
       @canvas[y1][x1] = 'x'
     elsif x1 == x2

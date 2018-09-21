@@ -1,21 +1,40 @@
 require "./Canvas.rb"
 
 puts "Welcome to coding challenge.\n"
+validation = false
 while true
   print "Enter command: "
   message = gets.chomp
   command = message.split(" ")
   if command[0] == "C"
     canvas = Canvas.new(command[1], command[2])
+    canvas.show()
+    validation = true
   elsif command[0] == "L"
-    canvas.line(command[1], command[2], command[3], command[4])
+    if validation == true
+      canvas.line(command[1], command[2], command[3], command[4])
+      canvas.show()
+    else
+      puts "You need to create Canvas."
+    end
   elsif command[0] == "R"
-    canvas.rectangle(command[1], command[2], command[3], command[4])
+    if validation == true
+      canvas.rectangle(command[1], command[2], command[3], command[4])
+      canvas.show()
+    else
+      puts "You need to create Canvas."
+    end
   elsif command[0] == "B"
-    canvas.fill(command[1], command[2], command[3])
+    if validation == true
+      canvas.fill(command[1], command[2], command[3])
+      canvas.show()
+    else
+      puts "You need to create Canvas."
+    end
   elsif command[0] == "Q"
+    print "Exit successfully."
     break
-    print "Exit successfully"
+  else
+    puts "Wrong command."
   end
-  canvas.show();
 end
