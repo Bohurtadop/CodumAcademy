@@ -53,6 +53,25 @@ class Canvas
     end
   end
 
+  def rectangle(x1, y1, x2, y2)
+    self.line(x1, y1, x2, y1)
+    self.line(x2, y1, x2, y2)
+    self.line(x1, y1, x1, y2)
+    self.line(x1, y2, x2, y2)
+  end
+
+  def fill(x, y, color)
+    x = x.to_i
+    y = y.to_i
+    if @canvas[y][x] == ' '
+      @canvas[y][x] = color.to_s
+      self.fill(x-1, y, color)
+      self.fill(x, y-1, color)
+      self.fill(x+1, y, color)
+      self.fill(x, y+1, color)
+    end
+  end
+
   def show()
     for i in @canvas
       for j in i
