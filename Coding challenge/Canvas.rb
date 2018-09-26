@@ -1,4 +1,5 @@
 class Canvas
+
   def initialize(width, height)
     width = width.to_i + 2
     height = height.to_i + 2
